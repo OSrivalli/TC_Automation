@@ -1,0 +1,150 @@
+*** Settings ***
+
+Library           Selenium2Library
+Resource          ../Resources/constants.txt
+Resource          ../ElementLocators/practicePageElemLoc.txt
+
+*** Keywords ***
+
+Launch Browser Application
+    [Documentation]  Launch and Navigate the base url
+    [Arguments]     ${url}     ${browser}
+    Open Browser    ${url}     ${browser}
+    Maximize Browser Window
+
+Wait Until an Element Is Visible
+    [Documentation]  Checks whether element is visible or not
+    [Arguments]  ${elemLoc}
+    Wait Until Element Is Visible   ${elemLoc}
+
+Close All Browser Applications
+    [Documentation]  Closes all the browser applications which are opened
+    Close All Browsers
+
+Close Current Browser Application
+    [Documentation]  Closes the current browser application
+    Close Browser
+
+Close Current Open Window
+    [Documentation]  Closes the current opened window
+    Close Window
+
+Click Browser Element
+    [Documentation]  Clicks an Element
+    [Arguments]  ${elemLoc}
+    Click Element   ${elemLoc}
+
+Click Browser Button
+    [Documentation]  Clicks a button
+    [Arguments]  ${elemLoc}
+    Click Button   ${elemLoc}
+
+Input Browser Text
+    [Documentation]  Input text into element
+    [Arguments]  ${elemLoc}  ${inputText}
+    Clear Element Text  ${elemLoc}
+    Input Text  ${elemLoc}  ${inputText}
+
+Select Browser RadioButton
+    [Documentation]  Check and verify RadioButton
+    [Arguments]  ${groupName}   ${value}
+    Select Radio Button    ${groupName}   ${value}
+    Radio Button Should Be Set To   ${groupName}   ${value}
+
+Select Browser Checkbox
+    [Documentation]  Check and verify Checkbox
+    [Arguments]  ${elemLoc}
+    Select Checkbox   ${elemLoc}
+    Checkbox Should Be Selected   ${elemLoc}
+
+Select Browser Combobox by Index
+    [Documentation]  Select the combobox value by index
+    [Arguments]  ${elemLoc}     ${index}
+    Select From List By Index   ${elemLoc}  ${index}
+
+Select Browser Multiple Values in Combobox by Index
+    [Documentation]  Select the Multiple Values in combobox by index
+    [Arguments]  ${elemLoc}     @{index}
+    Select From List By Index   ${elemLoc}  @{index}
+
+Select Browser Combobox by Label
+    [Documentation]  Select the combobox value by label
+    [Arguments]  ${elemLoc}     ${label}
+    Select From List By Label   ${elemLoc}  ${label}
+    List Selection Should Be    ${elemLoc}  ${label}
+
+Select Browser Multiple Values in Combobox by Label
+    [Documentation]  Select the Multiple Values in combobox by label
+    [Arguments]  ${elemLoc}     @{label}
+    Select From List By Label   ${elemLoc}  @{label}
+    List Selection Should Be    ${elemLoc}  @{label}
+
+Select Browser Combobox by Value
+    [Documentation]  Select the combobox value by Value
+    [Arguments]  ${elemLoc}     ${value}
+    Select From List By Value   ${elemLoc}  ${value}
+    List Selection Should Be    ${elemLoc}  ${value}
+
+Select Browser Multiple Values in Combobox by Value
+    [Documentation]  Select the Multiple Values in combobox by value
+    [Arguments]  ${elemLoc}     @{value}
+    Select From List By Value   ${elemLoc}  @{value}
+    List Selection Should Be    ${elemLoc}  @{value}
+
+Choose Input File
+    [Documentation]  Input File Path
+    [Arguments]  ${elemLoc}     ${filePath}
+    Choose File     ${elemLoc}     ${filePath}
+
+Click on a Link
+    [Documentation]  Click on a Specified link
+    [Arguments]  ${elemLoc}
+    Click Link   ${elemLoc}
+#    Wait Until Element Is Visible  ${subLink_Loc}
+    Go Back
+
+#    ${message}=  Handle Alert  action=ACCEPT  timeout=3s
+#    Should Be Equal  ${expMsg}  ${message}
+
+Accept Alert
+    [Documentation]  Accepts Popup Alert
+    Handle Alert  action=ACCEPT  timeout=3s
+
+Dismess Alert
+    [Documentation]  Dismess Popup Alert
+    Handle Alert  action=DISMISS  timeout=3s
+
+Verify Element is Disabled
+    [Documentation]  Verifies whether element is disabled or not
+    [Arguments]  ${elemLoc}
+    Element Should Be Disabled   ${elemLoc}
+
+Verify Element is Enabled
+    [Documentation]  Verifies whether element is Enabled or not
+    [Arguments]  ${elemLoc}
+    Element Should Be Enabled   ${elemLoc}
+
+Verify Element is Focused
+    [Documentation]  Verifies whether element is Focused or not
+    [Arguments]  ${elemLoc}
+    Element Should Be Focused   ${elemLoc}
+
+Verify Element is Visible
+    [Documentation]  Verifies whether element is Visible or not
+    [Arguments]  ${elemLoc}
+    Element Should Be Visible   ${elemLoc}    msg=Element ${elemLoc} is not visible
+
+Switch a Browser Window
+    [Documentation]  Swithch to new browser window
+    Select Window   Blogger
+    Maximize Browser Window
+    Wait Until Element Is Visible  ${signin_Loc}
+    Sleep  2s
+    Select Window   Selenium Practice Form
+
+Share Via
+    [Documentation]  Share the document
+    [Arguments]     ${eleLoc}  ${Email_Loc}
+    Click Element   ${eleLoc}
+    Click Element   ${Email_Loc}
+    Maximize Browser Window

@@ -1,0 +1,47 @@
+*** Settings ***
+
+Resource          ../Keywords/TechlisticKeywords.txt
+
+*** Test Cases ***
+
+01_Launch_Browser
+    Launch Techlistic Browser Application
+    Wait Until Title Element Is Visible
+
+02_Enter_Text
+    Input First and Last Name
+
+03_Select_RadioButton
+    Select a RadioButton
+
+04_Select_CheckBox
+    Select a Checkbox
+
+05_Select_ComboBox
+    Select Combobox by Label
+
+06_Select_Multiple_ComboBox_Elements
+    Select Multiple Values in Combobox by Label
+
+#07_Select_Image_File
+#    Select Input File
+
+08_Select_Button
+    Click a Button
+    Verify an Element is Visible
+
+#09_Select_Link
+#    Click a Link
+#    #Accept Alert Message
+
+#10_Sahre_Document
+#    Share Via Email
+#
+#11_Switch_Window
+#    Switch Browser Window
+#
+#12_Switch_Browser_Tabs
+#    Switch Tabs
+
+#12_Close_Browser
+#    Close Current Browser window

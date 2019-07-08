@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190708 16:55:06.287" generator="Robot 2.9.2 (Python 2.7.8 on win32)">
+<suite source="C:\Users\Kishore\PycharmProjects\Selenium\Robotframework_Site\Testcases\launchBrowser.txt" id="s1" name="launchBrowser">
+<test id="s1-t1" name="01_Launch_Browser">
+<kw name="Launch Techlistic Browser Application" library="TechlisticKeywords">
+<kw name="Launch Browser Application" library="seleniumKeywords">
+<doc>Launch and Navigate the base url</doc>
+<arguments>
+<arg>${baseURL}</arg>
+<arg>${browser}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:06.537" level="INFO">Opening browser 'chrome' to base url 'https://www.techlistic.com/p/selenium-practice-form.html'.</msg>
+<status status="PASS" endtime="20190708 16:55:48.514" starttime="20190708 16:55:06.537"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190708 16:55:49.670" starttime="20190708 16:55:48.516"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:49.672" starttime="20190708 16:55:06.537"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:49.673" starttime="20190708 16:55:06.537"></status>
+</kw>
+<kw name="Wait Until Title Element Is Visible" library="TechlisticKeywords">
+<kw name="Wait Until an Element Is Visible" library="seleniumKeywords">
+<doc>Checks whether element is visible or not</doc>
+<arguments>
+<arg>${titleElemLoc}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+</arguments>
+<status status="PASS" endtime="20190708 16:55:49.709" starttime="20190708 16:55:49.676"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:49.710" starttime="20190708 16:55:49.675"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:49.710" starttime="20190708 16:55:49.674"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:49.711" critical="yes" starttime="20190708 16:55:06.537"></status>
+</test>
+<test id="s1-t2" name="02_Enter_Text">
+<kw name="Input First and Last Name" library="TechlisticKeywords">
+<kw name="Input Browser Text" library="seleniumKeywords">
+<doc>Input text into element</doc>
+<arguments>
+<arg>${firstName_TbLoc}</arg>
+<arg>FirstName</arg>
+</arguments>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+</arguments>
+<status status="PASS" endtime="20190708 16:55:49.762" starttime="20190708 16:55:49.715"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:49.763" level="INFO">Typing text 'FirstName' into text field 'name=firstname'.</msg>
+<status status="PASS" endtime="20190708 16:55:49.843" starttime="20190708 16:55:49.762"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:49.843" starttime="20190708 16:55:49.714"></status>
+</kw>
+<kw name="Input Browser Text" library="seleniumKeywords">
+<doc>Input text into element</doc>
+<arguments>
+<arg>${lastName_TbLoc}</arg>
+<arg>SecondName</arg>
+</arguments>
+<kw name="Clear Element Text" library="Selenium2Library">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+</arguments>
+<status status="PASS" endtime="20190708 16:55:49.875" starttime="20190708 16:55:49.844"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+<arg>${inputText}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:49.876" level="INFO">Typing text 'SecondName' into text field 'name=lastname'.</msg>
+<status status="PASS" endtime="20190708 16:55:49.947" starttime="20190708 16:55:49.876"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:49.947" starttime="20190708 16:55:49.843"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20190708 16:55:51.962" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20190708 16:55:51.962" starttime="20190708 16:55:49.948"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:51.962" starttime="20190708 16:55:49.714"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:51.962" critical="yes" starttime="20190708 16:55:49.713"></status>
+</test>
+<test id="s1-t3" name="03_Select_RadioButton">
+<kw name="Select a RadioButton" library="TechlisticKeywords">
+<kw name="Select Browser RadioButton" library="seleniumKeywords">
+<doc>Check and verify RadioButton</doc>
+<arguments>
+<arg>${groupName_Loc}</arg>
+<arg>${groupNameVal_Loc}</arg>
+</arguments>
+<kw name="Select Radio Button" library="Selenium2Library">
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>${groupName}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:51.978" level="INFO">Selecting 'Female' from radio button 'sex'.</msg>
+<status status="PASS" endtime="20190708 16:55:52.059" starttime="20190708 16:55:51.978"></status>
+</kw>
+<kw name="Radio Button Should Be Set To" library="Selenium2Library">
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<arguments>
+<arg>${groupName}</arg>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.060" level="INFO">Verifying radio button 'sex' has selection 'Female'.</msg>
+<status status="PASS" endtime="20190708 16:55:52.093" starttime="20190708 16:55:52.060"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.093" starttime="20190708 16:55:51.978"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.094" starttime="20190708 16:55:51.962"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.094" critical="yes" starttime="20190708 16:55:51.962"></status>
+</test>
+<test id="s1-t4" name="04_Select_CheckBox">
+<kw name="Select a Checkbox" library="TechlisticKeywords">
+<kw name="Select Browser Checkbox" library="seleniumKeywords">
+<doc>Check and verify Checkbox</doc>
+<arguments>
+<arg>${prof_ChBLoc}</arg>
+</arguments>
+<kw name="Select Checkbox" library="Selenium2Library">
+<doc>Selects checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.099" level="INFO">Selecting checkbox 'id=profession-1'.</msg>
+<status status="PASS" endtime="20190708 16:55:52.175" starttime="20190708 16:55:52.098"></status>
+</kw>
+<kw name="Checkbox Should Be Selected" library="Selenium2Library">
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.176" level="INFO">Verifying checkbox 'id=profession-1' is selected.</msg>
+<status status="PASS" endtime="20190708 16:55:52.201" starttime="20190708 16:55:52.175"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.201" starttime="20190708 16:55:52.097"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.202" starttime="20190708 16:55:52.097"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.203" critical="yes" starttime="20190708 16:55:52.096"></status>
+</test>
+<test id="s1-t5" name="05_Select_ComboBox">
+<kw name="Select Combobox by Label" library="TechlisticKeywords">
+<kw name="Select Browser Combobox by Label" library="seleniumKeywords">
+<doc>Select the combobox value by label</doc>
+<arguments>
+<arg>${cont_CBLoc}</arg>
+<arg>Antartica</arg>
+</arguments>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+<arg>${label}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.208" level="INFO">Selecting options from selection list 'id=continents' by label Antartica.</msg>
+<status status="PASS" endtime="20190708 16:55:52.273" starttime="20190708 16:55:52.208"></status>
+</kw>
+<kw name="List Selection Should Be" library="Selenium2Library">
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+<arg>${label}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.274" level="INFO">Verifying list 'id=continents' has option [ Antartica ] selected.</msg>
+<msg timestamp="20190708 16:55:52.284" level="INFO">Current page contains list 'id=continents'.</msg>
+<status status="PASS" endtime="20190708 16:55:52.388" starttime="20190708 16:55:52.274"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.388" starttime="20190708 16:55:52.207"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.389" starttime="20190708 16:55:52.207"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.389" critical="yes" starttime="20190708 16:55:52.206"></status>
+</test>
+<test id="s1-t6" name="06_Select_Multiple_ComboBox_Elements">
+<kw name="Select Multiple Values in Combobox by Label" library="TechlisticKeywords">
+<kw name="Select Browser Multiple Values in Combobox by Label" library="seleniumKeywords">
+<doc>Select the Multiple Values in combobox by label</doc>
+<arguments>
+<arg>${selCmd_CBLoc}</arg>
+<arg>@{selList}</arg>
+</arguments>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+<arg>@{label}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.393" level="INFO">Selecting options from selection list 'id=selenium_commands' by labels Browser Commands, Navigation Commands, Wait Commands.</msg>
+<status status="PASS" endtime="20190708 16:55:52.539" starttime="20190708 16:55:52.393"></status>
+</kw>
+<kw name="List Selection Should Be" library="Selenium2Library">
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+<arg>@{label}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.540" level="INFO">Verifying list 'id=selenium_commands' has options [ Browser Commands | Navigation Commands | Wait Commands ] selected.</msg>
+<msg timestamp="20190708 16:55:52.550" level="INFO">Current page contains list 'id=selenium_commands'.</msg>
+<status status="PASS" endtime="20190708 16:55:52.679" starttime="20190708 16:55:52.540"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.679" starttime="20190708 16:55:52.392"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.680" starttime="20190708 16:55:52.391"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.680" critical="yes" starttime="20190708 16:55:52.391"></status>
+</test>
+<test id="s1-t7" name="08_Select_Button">
+<kw name="Click a Button" library="TechlisticKeywords">
+<kw name="Click Browser Button" library="seleniumKeywords">
+<doc>Clicks a button</doc>
+<arguments>
+<arg>${btn_Loc}</arg>
+</arguments>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+</arguments>
+<msg timestamp="20190708 16:55:52.683" level="INFO">Clicking button 'id=submit'.</msg>
+<status status="PASS" endtime="20190708 16:55:52.758" starttime="20190708 16:55:52.683"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:52.758" starttime="20190708 16:55:52.682"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20190708 16:55:54.771" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20190708 16:55:54.771" starttime="20190708 16:55:52.759"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:54.771" starttime="20190708 16:55:52.682"></status>
+</kw>
+<kw name="Verify an Element is Visible" library="TechlisticKeywords">
+<kw name="Verify Element is Visible" library="seleniumKeywords">
+<doc>Verifies whether element is Visible or not</doc>
+<arguments>
+<arg>${btn_Loc}</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${elemLoc}</arg>
+<arg>msg=Element ${elemLoc} is not visible</arg>
+</arguments>
+<msg timestamp="20190708 16:55:54.833" level="INFO">Element 'id=submit' is displayed.</msg>
+<status status="PASS" endtime="20190708 16:55:54.833" starttime="20190708 16:55:54.771"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:54.833" starttime="20190708 16:55:54.771"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:54.833" starttime="20190708 16:55:54.771"></status>
+</kw>
+<status status="PASS" endtime="20190708 16:55:54.833" critical="yes" starttime="20190708 16:55:52.681"></status>
+</test>
+<status status="PASS" endtime="20190708 16:55:54.833" starttime="20190708 16:55:06.287"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="7">Critical Tests</stat>
+<stat fail="0" pass="7">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="launchBrowser" pass="7">launchBrowser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

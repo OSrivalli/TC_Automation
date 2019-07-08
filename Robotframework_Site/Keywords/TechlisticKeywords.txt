@@ -1,0 +1,113 @@
+*** Settings ***
+
+Resource          ../ElementLocators/practicePageElemLoc.txt
+Resource          ../Resources/constants.txt
+Resource          ../Keywords/seleniumKeywords.txt
+
+*** Keywords ***
+
+Launch Techlistic Browser Application
+    Launch Browser Application  ${baseURL}  ${browser}
+
+Wait Until Title Element Is Visible
+    Wait Until an Element Is Visible    ${titleElemLoc}
+
+Close All Browser Windows
+    Close All Browser Applications
+
+Close Current Browser window
+    Close Current Browser Application
+
+Close Current Open Window
+    [Documentation]  Closes the current opened window
+    Close Window
+
+Click Browser Element
+    [Documentation]  Clicks an Element
+    [Arguments]  ${elemLoc}
+    Click Element   ${elemLoc}
+
+Click a Button
+    Click Browser Button  ${btn_Loc}
+    sleep  2s
+
+Input First and Last Name
+    Input Browser Text  ${firstName_TbLoc}  FirstName
+    Input Browser Text  ${lastName_TbLoc}   SecondName
+    sleep  2s
+
+Select a RadioButton
+    Select Browser RadioButton    ${groupName_Loc}   ${groupNameVal_Loc}
+
+Select a Checkbox
+    Select Browser Checkbox  ${prof_ChBLoc}
+
+Select Browser Combobox by Index
+    [Documentation]  Select the combobox value by index
+    [Arguments]  ${elemLoc}     ${index}
+    Select From List By Index   ${elemLoc}  ${index}
+
+Select Browser Multiple Values in Combobox by Index
+    [Documentation]  Select the Multiple Values in combobox by index
+    [Arguments]  ${elemLoc}     @{index}
+    Select From List By Index   ${elemLoc}  @{index}
+
+Select Combobox by Label
+    Select Browser Combobox by Label  ${cont_CBLoc}     Antartica
+
+Select Multiple Values in Combobox by Label
+    Select Browser Multiple Values in Combobox by Label  ${selCmd_CBLoc}    @{selList}
+
+Select Browser Combobox by Value
+    [Documentation]  Select the combobox value by Value
+    [Arguments]  ${elemLoc}     ${value}
+    Select From List By Value   ${elemLoc}  ${value}
+    List Selection Should Be    ${elemLoc}  ${value}
+
+Select Browser Multiple Values in Combobox by Value
+    [Documentation]  Select the Multiple Values in combobox by value
+    [Arguments]  ${elemLoc}     @{value}
+    Select From List By Value   ${elemLoc}  @{value}
+    List Selection Should Be    ${elemLoc}  @{value}
+
+Select Input File
+    Choose Input File  ${filePath_Loc}   ${CURDIR}//seleniumKeywords.txt
+
+Click a Link
+    Click on a Link  ${Link_Loc}
+
+Accept Alert Message
+    Accept Alert
+
+Dismess an Alert
+    Dismess Alert
+
+Verify Element is Disabled
+    [Documentation]  Verifies whether element is disabled or not
+    [Arguments]  ${elemLoc}
+    Element Should Be Disabled   ${elemLoc}
+
+Verify Element is Enabled
+    [Documentation]  Verifies whether element is Enabled or not
+    [Arguments]  ${elemLoc}
+    Element Should Be Enabled   ${elemLoc}
+
+Verify Element is Focused
+    [Documentation]  Verifies whether element is Focused or not
+    [Arguments]  ${elemLoc}
+    Element Should Be Focused   ${elemLoc}
+
+Verify an Element is Visible
+    Verify Element is Visible   ${btn_Loc}
+
+Switch Browser Window
+    Switch a Browser Window
+
+Share Via Email
+    Share Via  ${Share_Loc}  ${Email_Loc}
+
+Switch Tabs
+    [Documentation]  Switch between the tabs
+    Click on a Link  ${home_Loc}
+
+
